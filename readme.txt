@@ -7,6 +7,9 @@ Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
+== Short Description ==
+Exclude selected content from Algolia search index safely and efficiently.
+
 == Description ==
 Algolia Search Exclude allows you to easily exclude posts, pages, and custom post types from Algolia search results.
 
@@ -37,8 +40,6 @@ https://www.algolia.com/policies/terms/
 
 Privacy Policy:
 https://www.algolia.com/policies/privacy/
-== Short Description ==
-Exclude selected content from Algolia search index safely.
 
 == Features ==
 - Exclude posts and pages from Algolia indexing

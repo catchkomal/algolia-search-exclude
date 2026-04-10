@@ -17,6 +17,26 @@ Perfect for:
 - Removing outdated posts from search
 - Controlling search visibility without deleting content
 
+What the service does:
+Used to remove selected content from Algolia search index.
+
+What data is sent:
+- Application ID
+- Admin API Key
+- Object IDs for deletion
+
+When:
+- When admin submits exclusion settings
+- When syncing content
+
+Service provider:
+Algolia Inc.
+
+Terms of Service:
+https://www.algolia.com/policies/terms/
+
+Privacy Policy:
+https://www.algolia.com/policies/privacy/
 == Short Description ==
 Exclude selected content from Algolia search index safely.
 

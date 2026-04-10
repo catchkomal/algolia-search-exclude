@@ -298,11 +298,26 @@ function se_save_settings() {
     if ( ! current_user_can( 'manage_options' ) ) wp_die( 'Forbidden' );
 
     // Algolia credentials
-    update_option( 'se_algolia_app_id', sanitize_text_field( wp_unslash($_POST['se_algolia_app_id']) ?? '' ) );
-    update_option( 'se_algolia_index',  sanitize_text_field( wp_unslash($_POST['se_algolia_index']) ?? '' ) );
-    $key = sanitize_text_field( wp_unslash($_POST['se_algolia_admin_key']) ?? '' );
-    if ( $key !== '' ) update_option( 'se_algolia_admin_key', $key );
+		$app_id = isset($_POST['se_algolia_app_id']) 
+			? sanitize_text_field( wp_unslash( $_POST['se_algolia_app_id'] ) ) 
+			: '';
 
+		update_option( 'se_algolia_app_id', $app_id );
+
+		$index = isset($_POST['se_algolia_index']) 
+			? sanitize_text_field( wp_unslash( $_POST['se_algolia_index'] ) ) 
+			: '';
+
+		update_option( 'se_algolia_index', $index );
+
+		$key = isset($_POST['se_algolia_admin_key']) 
+			? sanitize_text_field( wp_unslash( $_POST['se_algolia_admin_key'] ) ) 
+			: '';
+
+		if ( $key !== '' ) {
+			update_option( 'se_algolia_admin_key', $key );
+		}
+    
     // Post IDs — diff to find newly excluded
     $old_ids = array_filter( array_map( 'intval', (array) get_option( 'se_excluded_ids', [] ) ) );
     $ids_raw = sanitize_text_field( wp_unslash($_POST['se_excluded_ids']) ?? '' );
